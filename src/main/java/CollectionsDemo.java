@@ -83,6 +83,7 @@ public class CollectionsDemo
         return result;
     }
 
+    //Задание 6.8 Список людей, чей возраст не менее 18 лет
     public static ArrayList<Integer> eighteenYears(Map<Integer, Human> map){
         ArrayList result = new ArrayList<>(map.size());
         for(Map.Entry<Integer, Human> entry : map.entrySet()){
@@ -91,6 +92,7 @@ public class CollectionsDemo
         return result;
     }
 
+    //Задание 6.9 Отображение, сопоставляющее возраст идентификатору
     public static Map<Integer, Integer> ageIdentifiers(Map<Integer, Human> map)
     {
         Map<Integer, Integer> result = new LinkedHashMap<>();
@@ -100,7 +102,11 @@ public class CollectionsDemo
         return result;
     }
 
-    public static Map<Integer, ArrayList<Human>> listOfPeopleOfAGivenAge(Map<Integer, Human> map){
+    //Задание 6.10 Отображение, которое возрасту сопоставляет список всех людей данного возраста
+    public static Map<Integer, ArrayList<Human>> listOfPeopleOfAGivenAge(Set<Human> humans){
+        Map<Integer, ArrayList<Human>> ageMap= new LinkedHashMap<>();
+        for(Human human : humans){
 
+        }
     }
 }
