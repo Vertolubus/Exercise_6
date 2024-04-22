@@ -185,4 +185,39 @@ public class CollectionsDemoTest
 
         assertEquals(result, CollectionsDemo.ageIdentifiers(human));
     }
+
+    @Test
+    public void testListOfPeopleOfAGivenAge(){
+        Human human1 = new Human("Байтуганов", "Хахар", "Батькович", 19);
+        Human human2 = new Human("Джонсон", "Борис", "Джон", 32);
+        Human human3 = new Human("Мармеладзе", "Валерий", "Шотаевич", 18);
+        Human human4 = new Human("Абабаев", "Ерланус", "Карбюратович", 6);
+        Human human5 = new Human("Иванов", "Михаил", "Михайлович", 6);
+
+        Set<Human> setHumans = new LinkedHashSet<>();
+        setHumans.add(human1);
+        setHumans.add(human2);
+        setHumans.add(human3);
+        setHumans.add(human4);
+        setHumans.add(human5);
+
+        Map<Integer, ArrayList<Human>> result = new LinkedHashMap<>();
+
+        ArrayList<Human> oneAge = new ArrayList<>();
+        oneAge.add(human1);
+        ArrayList<Human> twoAge = new ArrayList<>();
+        twoAge.add(human2);
+        ArrayList<Human> threeAge = new ArrayList<>();
+        threeAge.add(human3);
+        ArrayList<Human> fourAge = new ArrayList<>();
+        fourAge.add(human4);
+        fourAge.add(human5);
+
+        result.put(19, oneAge);
+        result.put(32, twoAge);
+        result.put(18, threeAge);
+        result.put(6, fourAge);
+
+        assertEquals(result, CollectionsDemo.listOfPeopleOfAGivenAge(setHumans));
+    }
 }

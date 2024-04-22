@@ -105,8 +105,19 @@ public class CollectionsDemo
     //Задание 6.10 Отображение, которое возрасту сопоставляет список всех людей данного возраста
     public static Map<Integer, ArrayList<Human>> listOfPeopleOfAGivenAge(Set<Human> humans){
         Map<Integer, ArrayList<Human>> ageMap= new LinkedHashMap<>();
-        for(Human human : humans){
 
+        for(Human human : humans){
+            ArrayList<Human> ageList;
+            if(ageMap.containsKey(human.getAge())){
+                ageList = ageMap.get(human.getAge());
+            }
+            else{
+                ageList = new ArrayList<>(humans.size());
+            }
+
+            ageList.add(human);
+            ageMap.put(human.getAge(), ageList);
         }
+        return ageMap;
     }
 }
